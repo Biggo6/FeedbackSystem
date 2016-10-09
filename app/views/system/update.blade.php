@@ -23,7 +23,7 @@
                                 <div class="col-md-6 card-box">
                                     <h4 class="m-t-0 header-title "><b><i class="fa fa-edit"></i> Update System Information</b></h4>
                                     <hr/>
-
+                                    @include('partials.files._success')
                                     <form role="form" id="registerForm_App">
                                         <div class="form-group">
                                             <label for="appName">Application Name: </label>
@@ -41,9 +41,26 @@
                                             <label for="appLogo">Logo: </label>
                                             <input type="file" id="appLogo" name="appLogo" class="filestyle" data-buttonName="btn-primary">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="appCopyRight">Text Editor: </label>
+                                            <select class="form-control" id="appTextEditor" name="appTextEditor">
+                                                @if(HelperX::getSystem()->editor == "advance")
+                                                    <option value="advance">Advance Editor</option>
+                                                    <option value="basic">Basic Editor</option>
+                                                @else
+                                                    <option value="basic">Basic Editor</option>
+                                                    <option value="advance">Advance Editor</option>
+                                                    
+                                                @endif
+                                            </select>
+                                        </div>
+                                        <br/><hr/>
                                         
                                         <button type="button" id="systemSave" class="btn btn-purple waves-effect waves-light"><i class="fa fa-save"></i> UPDATE INFORMATION</button>
                                     </form>
+                                </div>
+                                <div class="col-md-2 card-box">
+                                    <div id="logo-placeholder"></div>
                                 </div>
 
                                 

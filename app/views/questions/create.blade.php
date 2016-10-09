@@ -26,8 +26,8 @@
 
                                     <form role="form" id="registerForm_Qn">
                                         <div class="form-group">
-                                            <label for="qnBody">Question Body: </label>
-                                            <textarea id="qnBody" name="qnBody" class="form-control validate[required] summernote" data-errormessage-value-missing="Question Body is required!" data-prompt-position="bottomRight"></textarea>
+                                            <label for="qnBody" id="">Question Body: </label>
+                                            <textarea id="qnBody" name="qnBody" class="form-control validate[required] {{HelperX::getEditor()}}" data-errormessage-value-missing="Question Body is required!" data-prompt-position="bottomRight"></textarea>
                                             
                                         </div>
                                         <div class="form-group">
@@ -44,7 +44,7 @@
                                         <hr/>
                                         
                                         
-                                        <p><button type="button" register="save" class="btn register btn-purple waves-effect waves-light"><i class="fa fa-save"></i> SAVE</button> <button register="saveandnew" type="button"  class="btn register btn-success waves-effect waves-light"><i class="fa fa-save"></i> SAVE AND NEW</button></p>
+                                        <p><button type="button" register="save" class="btn register btn-purple waves-effect waves-light"><i class="fa fa-save"></i> SAVE</button> {{-- <button register="saveandnew" type="button"  class="btn register btn-success waves-effect waves-light"><i class="fa fa-save"></i> SAVE AND NEW</button> --}}</p>
                                     </form>
                                 </div>
 
