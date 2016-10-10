@@ -88,7 +88,7 @@
 
                 <div class="form-group m-t-30">
 
-                    <center>{{date('Y')}} &copy; {{HelperX::getSystem()->footer_title}} </center>
+                    <center>{{date('Y')}} &copy; {{HelperX::getSystem()->footer_title}} | <a href="{{url('/')}}"> Survey</a></center>
                     <!-- <div class="col-sm-7">
                         <a href="pages-recoverpw.html" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot your
                             password?</a>

@@ -51,7 +51,7 @@
                                                     <td>{{Carbon::parse($d->created_at)->format('Y-m-d h:i:s')}}</td>
                                                     <td>
                                                         <span style="cursor: pointer"  class="label label-primary" onclick="" url="" title="Edit This Record" rowid=""><i class="fa fa-edit"></i></span>
-                                                        <span style="cursor: pointer"  class="label label-danger" onclick="" url="" title="Delete This Record" rowid=""><i class="fa fa-trash"></i></span>
+                                                        <a href="{{route('question.destroy', $d->id)}}"><span style="cursor: pointer"  class="label label-danger" onclick="return deleteConfirm()" url="" title="Delete This Record" rowid=""><i class="fa fa-trash"></i></span></a>
                                                     </td>
                                                 </tr>
                                                 <?php $i++; ?>

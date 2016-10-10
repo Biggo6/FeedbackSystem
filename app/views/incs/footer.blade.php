@@ -1,11 +1,13 @@
         <!-- jQuery  -->
         <script src="{{url('izgram/assets/js/jquery.min.js')}}"></script>
 
+        
+
         <script src="{{url('izgram/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
         <script src="{{url('izgram/assets/plugins/datatables/dataTables.bootstrap.js')}}"></script>
         <script src="{{url('izgram/assets/plugins/datatables/dataTables.buttons.min.js')}}"></script>
         <script src="{{url('izgram/assets/plugins/datatables/buttons.bootstrap.min.js')}}"></script>
-        <script src="{{url('izgram/assets/plugins/datatables/jszip.min.js')}}"></script>
+        
         <script src="{{url('izgram/assets/plugins/datatables/pdfmake.min.js')}}"></script>
         <script src="{{url('izgram/assets/plugins/datatables/vfs_fonts.js')}}"></script>
         <script src="{{url('izgram/assets/plugins/datatables/buttons.html5.min.js')}}"></script>
@@ -42,7 +44,7 @@
 
             });
         </script>
-
+        @if(Route::currentRouteName() == "configure.system")
         <script type="text/javascript">
         window.onload = function(){
 
@@ -105,7 +107,8 @@
             });
 
         }
-</script>
+        </script>
+        @endif
 <script type="text/javascript">
 $(function(){
     $('body').on('click', '#removeLogo', function(){
@@ -374,6 +377,50 @@ $(function(){
             };
 
         </script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+
+        <script src="{{url('survey/survey.bootstrap.js')}}"></script>
+
+        <script type="text/javascript">
+
+        function deleteConfirm(){
+            var conf = confirm('Are you sure?');
+            if(conf){
+               return true; 
+            }
+
+            return false;
+        }
+
+        function sendDataToServer(survey) {
+            console.log(survey);
+        };
+
+        $('#loader').show();
+
+        Biggo.talkToServer("{{route('question.preview')}}").then(function(res){
+            $('#loader').hide();
+
+            $('#header').show();
+
+            var surveyJSON = res;
+
+            var survey = new Survey.Survey(surveyJSON, "surveyContainer");
+            survey.showProgressBar = "top";
+            survey.css = {
+                navigationButton: "btn btn-success btn-lg"   
+           };
+            survey.onComplete.add(sendDataToServer);
+            survey.render();
+        });
+
+        
+
+        </script>
+
+
 
     </body>
 

@@ -18,7 +18,7 @@ Route::get('/auth/', function()
 
 Route::get('/', function()
 {
-	return Redirect::to('/auth');
+	return View::make('takeSurvey');
 });
 
 Route::post('app/login', ['as'=>'app.login', 'uses'=>'AppController@login']);
@@ -51,9 +51,15 @@ Route::group(['before'=>'auth'], function(){
 	Route::get('roles/refreshWith', ['as'=>'roles.refreshWith', 'uses'=>'ConfigureController@rolesWith']);
 	//Questions code
 	Route::get('question/create',['as'=>'question.create', 'uses'=>'QuestionController@create']);
+	Route::get('question/destroy/{id}',['as'=>'question.destroy', 'uses'=>'QuestionController@destroy']);
 	Route::post('question/store',['as'=>'question.store', 'uses'=>'QuestionController@store']);
 	Route::get('question/refreshWith', ['as'=>'question.refreshWith', 'uses'=>'QuestionController@refreshWith']);
 	Route::get('question/index', ['as'=>'question.index', 'uses'=>'QuestionController@index']);
+	Route::get('question/preview', ['as'=>'question.preview', 'uses'=>'QuestionController@preview']);
+	
 });
 
-
+Route::post('question/preview', ['as'=>'question.getpreview', 'uses'=>'QuestionController@getpreview']);
+Route::post('app/getSubDepart', ['as'=>'app.getSubDepart', 'uses'=>'QuestionController@getSubDepart']);
+Route::post('app/takeSurvey', ['as'=>'app.takeSurvey', 'uses'=>'QuestionController@takeSurvey']);
+Route::post('app/storeSurvey', ['as'=>'app.storeSurvey', 'uses'=>'QuestionController@storeSurvey']);

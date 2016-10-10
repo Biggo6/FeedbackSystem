@@ -5,14 +5,7 @@
         <div class="wrapper">
             <div class="container">
 
-                <!-- Page-Title -->
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h4 class="page-title well"><i class="fa fa-plus"></i> Add New Question</h4>
-                        <hr/>
-                    </div>
-                </div>
-                <!-- Page-Title -->
+                
 
 
                 <div class="row">
@@ -38,8 +31,37 @@
                                                 <option value="0">NO</option>
                                             </select>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="RequiredQn">Is Required?: </label>
+                                            <select class="form-control validate[required]" data-errormessage-value-missing="isRequired field is required!" data-prompt-position="bottomRight" id="RequiredQn" name="RequiredQn">
+                                               
+                                                <option value="1">YES</option>
+                                                <option value="0">NO</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="RateDescription">Rate Description: </label>
+                                            <input type="text" class="form-control validate[required]" data-errormessage-value-missing="Rate Description field is required!" data-prompt-position="bottomRight" id="RateDescription" value="Satisfaction" name="RateDescription" />
+                                               
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="maximumRateDescription">Maximum Rate Description: </label>
+                                            <input type="text" class="form-control validate[required]" data-errormessage-value-missing="Maximum Rate Description field is required!" data-prompt-position="bottomRight" id="maximumRateDescription" value="Completely satisfied" name="maximumRateDescription" />
+                                               
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="manimumRateDescription">Mininum Rate Description: </label>
+                                            <input type="text" class="form-control validate[required]" data-errormessage-value-missing="Mininum Rate Description field is required!" data-prompt-position="bottomRight" id="manimumRateDescription" value="Not Satisfied" name="manimumRateDescription" />
+                                               
+                                        </div>
 
-                                        <br/>
+                                        <div class="form-group">
+                                            <label for="rateValues">Rate Values Count: </label>
+                                            <input type="text" class="form-control validate[required]" data-errormessage-value-missing="Mininum Rate Description field is required!" data-prompt-position="bottomRight" id="rateValues" value="5" name="rateValues" />
+                                               
+                                        </div>
+
+                                       
                                         <br/>
                                         <hr/>
                                         

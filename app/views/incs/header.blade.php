@@ -13,6 +13,8 @@
 
         <title>{{HelperX::getSystem()->app_name}} | Dashboard</title>
 
+        <link rel="stylesheet" type="text/css" href="{{--url('survey/survey.css')--}}">
+
         <link href="{{url('izgram/assets/plugins/summernote/dist/summernote.css')}}" rel="stylesheet" />
 
 
